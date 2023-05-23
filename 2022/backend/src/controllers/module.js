@@ -17,7 +17,7 @@ const createModule = async (req, res) => {
 
 const getAllModules = async (req, res) => {
   const data = await Module.find()
-    .populate("lecturerId", "userName email")
+    .populate("lecturerIds", "userName email")
     .lean();
 
   return res.status(200).json({
@@ -30,7 +30,7 @@ const getAModule = async (req, res) => {
   const { id } = req.params;
 
   const module = await Module.findById(id)
-    .populate("lecturerId", "userName email")
+    .populate("lecturerIds", "userName email")
     .lean();
 
   if (!module) {

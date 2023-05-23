@@ -9,11 +9,13 @@ const moduleSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  lecturerId: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "User",
-  },
+  lecturerIds: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
+    },
+  ],
   academicYear: {
     type: Number,
     required: true,

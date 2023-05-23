@@ -11,7 +11,7 @@ const timetableSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
-  Semester: {
+  semester: {
     type: Number,
     required: true,
   },

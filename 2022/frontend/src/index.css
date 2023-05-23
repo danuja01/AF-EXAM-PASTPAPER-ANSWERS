@@ -75,6 +75,36 @@ select {
   }
 }
 
+/* Navbar */
+
+.navbar {
+  background-color: #f684ae;
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #fff;
+  font-weight: semi-bold;
+  font-family: "Roboto", sans-serif;
+  padding: 0.5rem 1rem;
+}
+
+.navbar a:hover {
+  background-color: #f76ea0;
+  border-radius: 10px;
+}
+
+/* form styles */
+
 .form {
   width: 23rem;
   background-color: #f2bed180;
@@ -212,4 +242,66 @@ button:focus {
   + .toggle-switch-background
   .toggle-switch-handle {
   transform: translateX(25px);
+}
+
+/* Student Page */
+
+.student {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.student h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  color: #fb3c82;
+  text-align: center;
+  display: block;
+}
+
+.table {
+  margin-top: 2rem;
+}
+
+.table h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  display: block;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table table thead tr {
+  text-align: left;
+  background-color: #fb3c82;
+}
+
+.table table thead tr th {
+  font-weight: bold;
+  padding: 1rem;
+  color: #fff;
+}
+
+.table table tbody tr {
+  border-bottom: 1px solid #f76ea0;
+}
+
+.table table tbody tr td {
+  padding: 1rem;
+}
+
+.table table tbody tr:hover {
+  background-color: #f76ea080;
+}
+
+.table table tbody tr td:hover {
+  background-color: #f76ea080;
 }

@@ -24,6 +24,7 @@ const Login = () => {
       .then((resposne) => {
         localStorage.setItem("accessToken", resposne.data.accessToken);
         localStorage.setItem("userType", resposne.data.userType);
+        localStorage.setItem("userId", resposne.data.userId);
 
         if (resposne.data.userType === "admin") navigate("/admin");
         else if (resposne.data.userType === "student") navigate("/student");

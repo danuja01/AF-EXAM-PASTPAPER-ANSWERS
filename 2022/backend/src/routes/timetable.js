@@ -20,6 +20,6 @@ router.get(
   authorizer(["admin", "lecturer"]),
   getTimeslotsByLecturer
 );
-router.get("/semester", verifyJWT, getTimeslotsBySemester);
+router.get("/semester/:semester", verifyJWT, getTimeslotsBySemester);
 
 module.exports = router;

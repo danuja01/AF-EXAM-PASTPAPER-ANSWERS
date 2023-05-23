@@ -50,7 +50,7 @@ const getTimeslotsByLecturer = async (req, res) => {
 };
 
 const getTimeslotsBySemester = async (req, res) => {
-  const { semester } = req.body;
+  const { semester } = req.params;
 
   const data = await Timetable.find({ semester })
     .populate("subject", "moduleName duration academicYear")
@@ -61,7 +61,7 @@ const getTimeslotsBySemester = async (req, res) => {
     return res.status(404).json({ message: "No any data found" });
   }
 
-  return res.status(404).json({
+  return res.status(200).json({
     data,
     message: "Retrived timeslots successfully.",
   });

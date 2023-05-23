@@ -150,7 +150,7 @@ label {
 }
 
 button {
-  background-color: #f79cbd;
+  background-color: #f76ea0;
   color: #fff;
   padding: 12px 20px;
   border: none;
@@ -163,7 +163,7 @@ button {
 }
 
 button:hover {
-  background-color: #f76ea0;
+  background-color: #f79cbd;
 }
 
 button:focus {

@@ -11,6 +11,7 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     console.log(data);
@@ -19,6 +20,8 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    setLoading(true);
+
     axios
       .post("http://localhost:4000/api/login", data)
       .then((resposne) => {
@@ -26,6 +29,7 @@ const Login = () => {
         localStorage.setItem("userType", resposne.data.userType);
         localStorage.setItem("userId", resposne.data.userId);
 
+        setLoading(false);
         if (resposne.data.userType === "admin") navigate("/admin");
         else if (resposne.data.userType === "student") navigate("/student");
         else if (resposne.data.userType === "lecturer") navigate("/lecturer");
@@ -56,7 +60,11 @@ const Login = () => {
             type="password"
             id="password"
           />
-          <button type="submit">Login</button>
+          {loading ? (
+            <button disabled>Loading...</button>
+          ) : (
+            <button type="submit">Login</button>
+          )}
         </form>
       </div>
     </div>

@@ -58,16 +58,22 @@ const updateUser = async (req, res) => {
   const { id } = req.params;
   const { userName, email, useType } = req.body;
 
-  const data = await User.findByIdAndUpdate(
-    id,
-    { userName, email, useType },
-    { new: true }
-  );
+  try {
+    const data = await User.findByIdAndUpdate(
+      id,
+      { userName, email, useType },
+      { new: true }
+    );
 
-  return res.status(200).json({
-    data,
-    message: "User updated successfully.",
-  });
+    return res.status(200).json({
+      data,
+      message: "User updated successfully.",
+    });
+  } catch (err) {
+    return res.status(500).json({
+      message: err.message,
+    });
+  }
 };
 
 const deleteUser = async (req, res) => {

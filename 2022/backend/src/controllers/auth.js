@@ -32,6 +32,7 @@ const login = asyncHandler(async (req, res) => {
 
   res.status(200).json({
     accessToken: token,
+    userType: user.userType,
   });
 });
 

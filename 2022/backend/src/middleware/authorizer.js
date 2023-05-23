@@ -1,6 +1,4 @@
 const authorizer = (allowedRoles = []) => {
-  allowedRoles.push("admin");
-
   return (req, res, next) => {
     const userRole = req.user.userType;
 
